@@ -1,0 +1,6 @@
+
+# housekeeping
+pre-commit
+black
+flake8
+reorder-python-imports

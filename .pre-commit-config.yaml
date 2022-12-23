@@ -1,0 +1,33 @@
+exclude: ^venv
+files: .py
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: debug-statements
+      - id: detect-private-key
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.3.0
+    hooks:
+      - id: pyupgrade
+        args: [--py36-plus, --keep-percent-format]
+        exclude: "tests/test_slots.py"
+
+  - repo: local
+    hooks:
+      - id: reorder-python-imports
+        name: Run reorder-python-imports
+        entry: reorder-python-imports
+        language: system
+      - id: black
+        name: Run black
+        entry: black
+        language: system
+      - id: flake8
+        name: Run flake8
+        entry: flake8
+        language: system
+        args: ['--ignore=E501, W503']
