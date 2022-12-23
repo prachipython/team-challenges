@@ -31,3 +31,7 @@ repos:
         entry: flake8
         language: system
         args: ['--ignore=E501, W503']
+      - id: interrogate
+        name: Run interrogate
+        entry: interrogate
+        language: system
